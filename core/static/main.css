@@ -1,0 +1,16 @@
+a {
+    color: white;
+}
+
+body {
+    background: #ff7a8c;
+}
+
+.header {
+    margin-bottom: 1rem;
+}
+
+.user__card {
+    margin-bottom: 3rem;
+}
+
