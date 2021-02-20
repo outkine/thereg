@@ -10,10 +10,14 @@ def index(request):
 
 def user(request, username):
     user = get_object_or_404(User, username=username)
-    return render(request, 'user.html', {'user': user})
 
+    match = None
+    reverse_match = None
+    if request.user.is_authenticated:
+        match = Match.objects.filter(author=request.user, target=user).first()
+        reverse_match = Match.objects.filter(author=user, target=request.user).first()
 
-    return render(request, 'user.html', {'user': user})
+    return render(request, 'user.html', {'user': user, 'match': match, 'reverse_match': reverse_match})
 
 def match(request, username):
     if request.user.is_authenticated:
