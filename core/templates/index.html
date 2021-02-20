@@ -4,10 +4,11 @@
 <div>
 {% for user in users %}
     <div class="user__card">
-        <p>{{ user.first_name }} {{ user.last_name }}</p>
+        <a href="{% url 'user' user.username %}">{{ user.first_name }} {{ user.last_name }}</a>
         <p>{{ user.bio }}</p>
         <p>{{ user.pronouns }}</p>
     </div>
 {% endfor %}
 </div>
+
 {% endblock %}
