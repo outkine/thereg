@@ -2,6 +2,12 @@
 
 {% block content %}
 <div>
-    Welcome to the reg!
+{% for user in users %}
+    <div class="user__card">
+        <p>{{ user.first_name }} {{ user.last_name }}</p>
+        <p>{{ user.bio }}</p>
+        <p>{{ user.pronouns }}</p>
+    </div>
+{% endfor %}
 </div>
 {% endblock %}
