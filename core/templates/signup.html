@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>Make sure to include http:// with your social link!</p>
+    <form enctype="multipart/form-data" method="post" action="">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="signup">
+    </form>
+{% endblock %}
+

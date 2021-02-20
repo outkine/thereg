@@ -4,6 +4,9 @@
 <div>
 {% for user in users %}
     <div class="user__card">
+        {% if user.photo %}
+            <img src="/{{ user.photo }}">
+        {% endif %}
         <a href="{% url 'user' user.username %}">{{ user.first_name }} {{ user.last_name }}</a>
         <p>{{ user.bio }}</p>
         <p>{{ user.pronouns }}</p>

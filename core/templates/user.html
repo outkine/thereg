@@ -3,6 +3,9 @@
 {% block content %}
 <h1>{{ user.first_name }} {{ user.last_name }}</h1>
 <div class="details">
+    {% if user.photo %}
+        <img src="/{{ user.photo }}">
+    {% endif %}
     <p>{{ user.bio }}</p>
     <a href="{{ user.social_link }}">Social link</a>
     <p>{{ user.pronouns }}</p>
